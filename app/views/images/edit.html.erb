@@ -1,0 +1,16 @@
+<h1>Editing Image</h1>
+
+<%= form_for(@image) do |f| %>
+  <div class="field">
+    <%= f.label :品番を入れてね %>
+    <%= f.text_field :code %>
+    <%= f.label :ファイルを選んでね %>
+    <%= f.file_field :upload_file %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Upload" %>
+  </div>
+<% end %>
+
+<%= link_to 'Show', @image %> |
+<%= link_to 'Back', images_path %>

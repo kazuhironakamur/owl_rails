@@ -1,0 +1,34 @@
+<table id="tbl">
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Catchcopy</th>
+      <th>Weight g</th>
+      <th>jsjancd</th>
+      <th>mkjancd</th>
+      <th>brandname</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td id="<%= product.code %>" class="code"><%= product.code %></td>
+        <td id="<%= product.code %>" class="product"><%= product.catchcopy %></td>
+        <td id="<%= product.code %>" class="product"><%= product.weight_g %></td>
+        <td id="<%= product.code %>" class="jsjancd"></td>
+        <td id="<%= product.code %>" class="mkjancd"></td>
+        <td id="<%= product.code %>" class="clsnm"></td>
+        <td><%= link_to 'Show', product %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @products, previous_label: '＜前ページ', next_label: '次ページ＞' %>
+
+<br>
+
+<%= link_to 'New Product', new_product_path %>

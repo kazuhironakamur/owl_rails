@@ -1,0 +1,20 @@
+default: &default
+ adapter: oracle_enhanced
+ database: dwdb.dad-way.local:1521/DWDB01
+ pool: 5
+ timeout: 5000
+
+development:
+ <<: *default
+ adapter: sqlite3
+ database: db/development.sqlite3
+
+test:
+ <<: *default
+ username: owl_test
+ password: owl_test
+
+production:
+ <<: *default
+ username: owl
+ password: <%= ENV['ORACLE_SYSTEM_PASSWORD'] %>

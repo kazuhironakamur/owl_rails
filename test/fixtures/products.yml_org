@@ -1,0 +1,18 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+<% 0.upto(10000) do |n| %>
+product<%= n %>:
+  code: TEST<%= n %>
+  catchcopy: TEST<%= n %>
+  weight_g: <%= n %>
+<% end %>
+
+#one:
+#  code: MyString
+#  catchcopy: 
+#  weight_g: 1
+#
+#two:
+#  code: MyString
+#  catchcopy: 
+#  weight_g: 1

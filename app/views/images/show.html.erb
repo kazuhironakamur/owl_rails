@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @image.code %>
+</p>
+
+<p>
+  <strong>Filename:</strong>
+  <%= @image.filename %>
+</p>
+
+<p>
+  <strong>extension:</strong>
+  <%= @image.extension %>
+</p>
+
+<p>
+  <strong>Imagefile:</strong>
+  <%= image_tag(imageonly_image_path(@image), :size => "600x600") %>
+</p>
+
+<%= link_to 'Edit', edit_image_path(@image) %> |
+<%= link_to 'Back', images_path %>

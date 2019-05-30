@@ -1,0 +1,24 @@
+<%= form_tag products_filter_path, method: :get do %>
+    <div class="field">
+        <%= label_tag :code, 'コード:' %>
+        <%= text_field_tag :code, params["code"] %>
+    </div>
+    <div class="field">
+        <%= label_tag :code, '品目名:' %>
+        <%= text_field_tag :name, params["name"], class: 'ajax-autocomplete', 'table': 'hinmta', 'column': 'hinnma' %>
+        <datalist id="name_list"></datalist>
+    </div>
+    <div class="field">
+        <%= label_tag :catchcopy, 'キャッチコピー:' %>
+        <%= text_field_tag :catchcopy, params["catchcopy"] %>
+    </div>
+    <div class="field">
+        <%= label_tag :weight_g, '重量:' %>
+        <%= text_field_tag :weight_g, params["weight_g"] %>
+    </div>
+    <div class="field">
+        <%= label_tag :brand_code, 'ブランド:' %>
+        <%= select_tag :brand_code, params["brand_code"], multiple: true %>
+    </div>
+    <%= submit_tag '検索' %>
+<% end %>

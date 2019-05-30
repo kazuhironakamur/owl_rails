@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @product.code %>
+</p>
+
+<p>
+  <strong>Catchcopy:</strong>
+  <%= @product.catchcopy %>
+</p>
+
+<p>
+  <strong>Weight g:</strong>
+  <%= @product.weight_g %>
+</p>
+
+<p>
+  <strong>Imagefile:</strong>
+   <% response = Net::HTTP.get(URI.parse("http://localhost:3000/images/search/#{@product.code}")) %>
+   <% urls = JSON.parse(response) %>
+   <% urls.each do |url| %>
+    <%= image_tag(url['url'], :size => "300x300") %>
+   <% end %>
+</p>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
